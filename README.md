@@ -39,14 +39,14 @@ Description: 10 is current user id. Get the list of people the user is following
 ---
 http://localhost:8080/user/10/follow/2
 
-Metho: Put
+Method: Put
 
 Description: 10 is current user id and 2 is another user id. So here 10 start following 2. 
 
 ---
 http://localhost:8080/user/10/unfollow/2
 
-Metho: Delete
+Method: Delete
 
 Description: 10 is cirrent user id and 2 is another user id. So 10 unfollowing 2
 
