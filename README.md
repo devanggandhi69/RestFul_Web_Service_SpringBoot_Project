@@ -20,7 +20,7 @@ http://localhost:8080/user/10
 
 Method: Get
 
-Description: 10 is current user id. This will return list of messages the user is following as well as follow 
+Description: 10 is current user id. This will return list of messages of the current user. Include messages they have sent and messages sent by users they follow.
 
 ---
 http://localhost:8080/user/10?search=ut
