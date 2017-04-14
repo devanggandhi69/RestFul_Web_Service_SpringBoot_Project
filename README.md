@@ -3,6 +3,8 @@ Created the backend for a mini messaging service, inspired by Twitter.
 
 RESTful API where all endpoints require HTTP Basic authentication and generate output in JSON format. Implement the the following basic functionality:
 
+`RESTful API where all endpoints require HTTP Basic authentication and generate output in JSON format`
+
 `An endpoint to read the message list for the current user (as identified by their HTTP Basic authentication credentials). Include messages they have sent and messages sent by users they follow. Support a “search=” parameter that can be used to further filter messages based on keyword.`
 
 `Endpoints to get the list of people the user is following as well as the followers of the user.`
@@ -15,6 +17,11 @@ RESTful API where all endpoints require HTTP Basic authentication and generate o
 
 
 Used: Spring Boot, H2 in Memory SQL Database
+---
+When request below url first it will ask for username password.
+> username: user
+> password: password
+
 ---
 http://localhost:8080/user/10
 
