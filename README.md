@@ -20,6 +20,7 @@ Used: Spring Boot, H2 in Memory SQL Database
 ---
 When request below url first it will ask for username password.
 > username: user
+
 > password: password
 
 ---
