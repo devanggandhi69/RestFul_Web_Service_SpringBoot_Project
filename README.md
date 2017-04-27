@@ -18,7 +18,7 @@ RESTful API where all endpoints require HTTP Basic authentication and generate o
 
 Used: Spring Boot, H2 in Memory SQL Database
 ---
-When request below url first it will ask for username & password. Here username is the id of the existing user and password is "password". If we enter wrong password then our endpoint will not work. Existing user_id[1,2,...,10]
+To test this API in postmen we have to select Authorization Type as "Basic Auth" and enter username and password. Here username is the id of the existing user and password is "password". Existing user_id[1,2,...,10]. If we enter wrong password then Endpoints will not work.
 > username: 1 [id of the user]
 
 > password: password
