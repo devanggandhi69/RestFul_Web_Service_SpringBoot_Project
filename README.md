@@ -18,49 +18,49 @@ RESTful API where all endpoints require HTTP Basic authentication and generate o
 
 Used: Spring Boot, H2 in Memory SQL Database
 ---
-When request below url first it will ask for username password.
-> username: user
+When request below url first it will ask for username & password. Here username is the id of the existing user and password is "password". If we enter wrong password then our endpoint will not work. Existing user_id[1,2,...,10]
+> username: [id of the user]
 
 > password: password
 
 ---
-http://localhost:8080/user/10
+http://localhost:8080/user
 
 Method: Get
 
-Description: 10 is current user id. This will return list of messages of the current user. Include messages they have sent and messages sent by users they follow.
+Description: First, it fetch current user id from HTTP header. Then it will return list of messages of the current user. Include messages they have sent and messages sent by users they follow.
 
 ---
-http://localhost:8080/user/10?search=ut
+http://localhost:8080/user?search=ut
 
 Method: Get
 
 Desciption: Support a “search=” parameter that can be used to further filter messages based on keyword.
 
 ---
-http://localhost:8080/user/10/connections
+http://localhost:8080/user/connections
 
 Method: Get
 
-Description: 10 is current user id. Get the list of people the user is following as well as the followers of the user.
+Description: It fetch current user id from HTTP header. Then it will return the list of people the current user is following as well as the followers of the user.
 
 ---
-http://localhost:8080/user/10/follow/2
+http://localhost:8080/user/follow?uid=2
 
 Method: Put
 
-Description: 10 is current user id and 2 is another user id. So here 10 start following 2. 
+Description: It fetch current user id from HTTP header and 2 is another user id. So here current user start following another user whose id 2. 
 
 ---
-http://localhost:8080/user/10/unfollow/2
+http://localhost:8080/user/unfollow?uid=2
 
 Method: Delete
 
-Description: 10 is cirrent user id and 2 is another user id. So 10 unfollowing 2
+Description: It fetch current user id from HTTP header and 2 is another user id. So here current user unfollow another user whose id 2. 
 
 ---
-http://localhost:8080/user/10/distance/6
+http://localhost:8080/user/distance?uid=6
 
 Method: Get
 
-Description: Return distance between 10 and 6.
+Description: Return distance between current user and another user whose id is 6.

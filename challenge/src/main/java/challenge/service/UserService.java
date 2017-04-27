@@ -2,10 +2,8 @@ package challenge.service;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Currency;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -33,22 +31,16 @@ public class UserService {
 
 	//get all messages of user
 	public List<User> getAllMessage(User user) {
-		if (!peopleIdExist(user.getId())) {
-			return userDoesNotExist();
-		}
 		return userDao.getAllMessage(user);
 	}
 
 	//get messages with specific keyword
 	public List<User> getMessageWithKeyWord(User user, String search) {
-		if (!peopleIdExist(user.getId())) {
-			return userDoesNotExist();
-		}
 		return userDao.getMessageWithKeyWord(user, search);
 	}
 
 	//check user exist or not
-	private List<User> userDoesNotExist() {
+	public List<User> userDoesNotExist() {
 		User userNotExist = new User();
 		userNotExist.setName(null);
 		userNotExist.setContent("User does not exist");
@@ -59,6 +51,7 @@ public class UserService {
 
 	//get list of follower and following
 	public List<Map<String, String>> getListFollowersAndFollowing(User user) {
+
 		if (!peopleIdExist(user.getId())) {
 			Map<String, String> map = new HashMap<String, String>();
 			map.put("Message", "User Does not exist");
@@ -133,7 +126,7 @@ public class UserService {
 	}
 	
 	// Check that people is exist or not
-	private boolean peopleIdExist(int personId) {
+	public boolean peopleIdExist(int personId) {
 		List<Integer> personIdList = userDao.getAllPersonId();
 		if (personIdList.contains(personId))
 			return true;
